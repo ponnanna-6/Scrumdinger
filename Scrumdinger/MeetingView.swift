@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct MeetingView: View {
-    let scrum = DailyScrum.sampleData
     var body: some View {
         VStack {
             ProgressView(value: 10, total: 20)
@@ -26,11 +25,7 @@ struct MeetingView: View {
             .accessibilityElement(children: .ignore)
             .accessibilityLabel("Time remaining")
             .accessibilityValue("10 minutes")
-            VStack {
-                ForEach(scrum.indices) { index in
-                    CardView(scrum: scrum[index])
-                }
-            }
+            
             Circle().strokeBorder(lineWidth: 24)
             HStack{
                 Text("Speaker 1 of 3")

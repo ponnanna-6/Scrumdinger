@@ -9,7 +9,7 @@ struct CardView: View {
             Spacer()
             HStack {
                 Label("\(scrum.attendees.count)", systemImage: "person.3")
-                Spacer()
+                Spacer(minLength: 10)
                 Label("\(scrum.lengthInMinutes)", systemImage: "clock")
                     .padding(.trailing, 20)
             }
@@ -24,7 +24,7 @@ struct CardView_previews: PreviewProvider {
     static var scrum = DailyScrum.sampleData[0]
     static var previews: some View {
         CardView(scrum: scrum)
-            .background(.yellow)
+            .background(scrum.theme.mainColor)
             .previewLayout(.fixed(width: 400, height: 60))
     }
 }
